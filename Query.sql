@@ -47,6 +47,14 @@ FROM reviewers LEFT JOIN reviews on reviewers.id = reviews.reviewer_id
 GROUP BY reviewers.id;
 
 
+-- Return the TV show, rating of the reviewer and full name of the reviewer. 
+
+SELECT title, rating, CONCAT(first_name,' ',last_name) AS reviewer
+FROM reviewers JOIN reviews ON reviewers.id = reviews.reviewer_id
+INNER JOIN series ON series.id = reviews.series_id
+ORDER BY title ASC; 
+
+
 
 
 
