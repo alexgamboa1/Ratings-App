@@ -23,3 +23,18 @@ FROM reviewers JOIN reviews ON reviewers.id = reviews.reviewer_id;
 SELECT title, rating AS unreviewed_series
 FROM series LEFT JOIN reviews ON series.id = reviews.series_id WHERE reviews.rating IS NULL;
 
+
+-- Return the Genre and the avg rating per genre. Make sure to order by Genre.
+
+SELECT genre, AVG(rating) as avg_rating
+FROM series JOIN reviews ON series.id = reviews.series_id
+GROUP BY genre ORDER BY avg_rating;
+
+
+
+
+
+
+
+
+
