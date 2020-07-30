@@ -12,3 +12,9 @@ SELECT title, AVG(rating) AS avg_rating
 FROM series JOIN reviews ON series.id = reviews.series_id
 GROUP BY series.id
 ORDER BY avg_rating;
+
+-- Return table of reviewers name and rating
+
+SELECT first_name, last_name, rating
+FROM reviewers JOIN reviews ON reviewers.id = reviews.reviewer_id;
+
